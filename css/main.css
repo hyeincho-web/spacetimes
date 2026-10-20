@@ -1,0 +1,889 @@
+@charset "UTF-8";
+
+/* ==========
+   HEADER
+========== */
+
+header {
+  position: relative;
+
+  width: 100%;
+  height: 6.25rem; /* 100px */
+
+  background-image: url("../img/header_desktop.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ==========
+   LOGO
+========== */
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: "Gasoek One", sans-serif;
+  font-size: 5rem;
+  text-align: center;
+
+  /* gradient text */
+  background: var(--moonTomars);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  cursor: pointer;
+}
+
+/* ==========
+   NAV
+========== */
+
+header nav {
+  width: 100%;
+  height: 100%;
+}
+
+.nav_wrap {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  padding: 0 1.5rem; /* 24px */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--white);
+}
+
+.nav_wrap .Lnav ul,
+.nav_wrap .Rnav ul {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav_wrap li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav_wrap a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========
+   모바일 버튼
+========== */
+
+.mob_btn {
+  display: none;
+}
+
+/* ==========
+   MAIN VISUAL
+========== */
+
+#main_visual {
+  width: 100%;
+}
+
+.card_wrap {
+  display: flex;
+  padding: 0 24px;
+  width: 100%;
+  gap: 1%;
+}
+
+.card {
+  flex: 1;
+  /* ⭐ 4개의 카드 너비를 균등하게 분배
+flex: 1 1 0%의 축약형
+각 카드의 기본 너비를 0으로 두고 남은 공간을 균등하게 나눠 갖게 함
+flex: 1 여기에 넣기 ⬆️⬆️⬆️ */
+  min-width: 0;
+  /* ⭐ 카드 내부 콘텐츠 때문에 너비가 늘어나는 현상 방지 */
+}
+
+.card1 img,
+.card3 img,
+.card4 img {
+  display: block;
+  width: 100%;
+  /* 이미지를 카드 너비에 맞춤 */
+  aspect-ratio: 333 / 498;
+  /* 이미지 비율 유지 */
+  object-fit: cover;
+}
+
+.card p {
+  text-align: center;
+  color: var(--white);
+}
+
+.card2 {
+  position: relative;
+  background: var(--5-sub);
+}
+
+.card2 a {
+  display: block;
+  width: 100%;
+}
+
+.subscribe_txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: block;
+  writing-mode: vertical-rl;
+  /* 세로 텍스트 쓰기 */
+  text-orientation: upright;
+  /* 글자를 회전시키지 않고 똑바로 세움 */
+  white-space: nowrap;
+
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.subscribe_arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+
+  transition: 0.3s ease-out;
+}
+
+.subscribe_arrow:hover {
+  transform: scale(1.1);
+}
+
+/* ==========
+MAIN CONTENT
+========== */
+.main_con_wrap {
+  border-top: 5px dotted var(--white);
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+}
+
+.main_con_wrap img {
+  width: 825px;
+  height: 100%;
+}
+
+.main_con_txt {
+  position: relative;
+  width: 100%;
+
+  background: var(--white);
+  height: auto;
+  /* height가 왼쪽 이미지와 안 맞는 부분 정확히 손보기 ‼️‼️‼️*/
+}
+
+.main_con_txt h1 {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.main_con_txt h2 {
+}
+
+.main_con_txt h4 {
+  text-align: right;
+}
+
+.main_con_txt p {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+/* ⭐⭐⭐ 화면 줄어들 때 이미지 비율 다시 잡기 ⭐⭐⭐ */
+
+/* ==========
+NEWSLETTER
+========== */
+.newsletter {
+  border-top: 5px dotted var(--white);
+
+  width: 100%;
+  background: #000;
+}
+
+.newsletter_wrap {
+  position: relative;
+
+  width: 100%;
+  height: 350px;
+
+  overflow: hidden;
+}
+
+.newsletter_bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: 50% 40%;
+
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.newsletter_con {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter h2 {
+  margin-bottom: 1rem;
+  line-height: 1;
+
+  color: var(--white);
+}
+
+/* 이메일 입력 영역 */
+.newsletter_con form {
+  display: flex;
+  align-items: stretch;
+
+  width: min(55%, 50rem);
+  gap: 1.5rem;
+}
+
+/* input */
+.newsletter_con input {
+  flex: 1;
+  min-width: 0;
+
+  height: 4.75rem;
+  padding: 0 2rem;
+
+  border: 0;
+
+  font-family: "Pretendard", sans-serif;
+  font-size: 1rem;
+}
+
+/* 전송 버튼 */
+.newsletter_con button {
+  flex: 0 0 4.75rem;
+
+  width: 4.75rem;
+  height: 4.75rem;
+
+  border: 0;
+  background: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+.newsletter_con button:hover {
+  background: var(--moonTomars);
+  transition: 0.3s ease-out;
+}
+
+/* 버튼 아이콘만 */
+
+.newsletter_con button img {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+
+  object-fit: contain;
+}
+
+.newsletter_con button img:hover {
+  transform: scale(1.2);
+}
+
+/* ==========
+GOODS
+========== */
+
+#goods {
+  width: 100%;
+}
+
+.goods_wrap {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--white);
+}
+
+.goods_card {
+  border: 1px solid white;
+  position: relative;
+  min-width: 0;
+
+  background: var(--bgBlack);
+  color: var(--white);
+}
+
+.goods_img > img {
+  display: block;
+
+  width: 100%;
+  height: 498px;
+
+  object-fit: cover;
+}
+
+.cart img {
+  position: absolute;
+  right: 1rem;
+  bottom: 9rem;
+
+  display: block;
+
+  width: 3.2rem;
+  height: auto;
+
+  transition: 0.3s ease-out;
+}
+.cart img:hover {
+  transform: scale(1.1);
+}
+
+.goods_info {
+  padding: 0.5rem;
+}
+.goods_info_wrap {
+  position: relative;
+  display: flex;
+}
+
+.goods_infoL {
+}
+.goods_infoR {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.goods_info span {
+  display: block;
+  text-align: right;
+}
+
+.goods_count {
+  border: 1px solid white;
+  padding: 1rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+
+  font-size: 1em;
+}
+
+.goods_count button {
+  border: none;
+  background: transparent;
+
+  font-size: 1.6em;
+
+  color: var(--white);
+
+  cursor: pointer;
+}
+
+/* ==========
+   VIDEO
+========== */
+#video {
+  width: 100%;
+  height: 100%;
+}
+.video_wrap {
+}
+#video {
+  width: 100%;
+}
+
+.video_wrap {
+  position: relative;
+  width: 100%;
+}
+
+.video_wrap video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 커스텀 재생 버튼
+.video_play */
+
+.video_play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.video_play img {
+  width: 10rem;
+  transition: 0.3s ease-out;
+}
+
+.video_play:hover img {
+  transform: scale(1.1);
+}
+
+.video_info {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 3rem;
+  text-align: center;
+}
+
+.video_info h1 {
+  /* 텍스트 이미지 */
+  background-image: url("../img/universe/Hubble\ WFC3UVIS\ +\ JWST\ MIRI_260916.jpg");
+
+  /* 이미지 크기 및 위치 */
+  background-size: auto;
+  background-position: 65%;
+
+  /* 이미지가 글자 모양으로 보이도록 */
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* 글자 자체의 색상을 투명하게 */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  /* 텍스트 외곽선 */
+  -webkit-text-stroke: 1px white;
+}
+
+.video_info p {
+  color: var(--white);
+}
+
+#monthly {
+  width: 100%;
+  height: 718px;
+}
+.monthly_wrap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  width: 100%;
+  height: 718px;
+  aspect-ratio: 2 / 1;
+}
+
+.monthly_wrapL {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+
+  height: 718px;
+}
+
+.monthly_wrapL figure {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.monthly_wrapL img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.monthly_wrapL::after {
+  display: block;
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(255, 255, 255, 0.95) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* 텍스트 */
+.monthly_txt {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  z-index: 1;
+
+  color: var(--black);
+}
+
+.monthly_txt span {
+  display: block;
+
+  font-family: "Gasoek One", sans-serif;
+  font-size: 2rem;
+  /* ⭐바깥쪽 그림자 효과 내기⭐ */
+}
+
+.monthly_txt h1 {
+  font-size: clamp(2rem, 4.4vw, 4.4rem);
+  line-height: 1.1;
+  word-break: keep-all;
+}
+
+.monthly_wrapR {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+
+  min-width: 0;
+  min-height: 0;
+  height: 718px;
+}
+
+.monthly_wrapR figure {
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.monthly_wrapR img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  /* 이미지 확대 */
+  transform: scale(1.8);
+}
+
+/* 첫 번째: 좌측 상단 */
+.monthly_wrapR figure:first-child img {
+  transform-origin: 25% 40%;
+  transform: scale(2);
+
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+/* 두 번째: 우측 상단 */
+.monthly_wrapR figure:nth-child(2) img {
+  transform-origin: 95% 100%;
+  transform: scale(2.5);
+
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+/* 세 번째: 좌측 하단 */
+.monthly_wrapR figure:nth-child(3) img {
+  transform-origin: 0% 100%;
+  transform: scale(2.5);
+
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+/* 네 번째: 우측 하단 */
+.monthly_wrapR figure:last-child img {
+  transform-origin: 100% 35%;
+  transform: scale(2.5);
+
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+/* hover */
+
+.monthly_wrapR figure:first-child:hover img {
+  transform-origin: 0% 0%;
+  transform: scale(2.5);
+}
+
+.monthly_wrapR figure:nth-child(2):hover img {
+  transform-origin: 80% 85%;
+  transform: scale(3);
+}
+
+.monthly_wrapR figure:nth-child(3):hover img {
+  transform-origin: 30% 100%;
+  transform: scale(4);
+}
+
+.monthly_wrapR figure:last-child:hover img {
+  transform-origin: 100% 0%;
+  transform: scale(2.5);
+}
+
+/* ==========
+   TODAY
+========== */
+#today {
+  width: 100%;
+}
+.today_wrap {
+  width: 100%;
+  height: 580px;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.todayL {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.todayL img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+.todayL:hover img {
+  transform: scale(1.5);
+}
+
+.todayR {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: var(--shark);
+}
+
+/* ==========
+   MEMBERSHIP
+========== */
+#membership {
+  width: 100%;
+
+  background: var(--earth);
+}
+
+.membership_wrap {
+  border-top: 5px dotted var(--white);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  width: 100%;
+  height: 1000px;
+}
+
+.membershipL {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  color: var(--white);
+  text-align-last: left;
+}
+
+.membershipL .logo_vol11 {
+}
+
+.membershipL .logo_vol11 img {
+  width: 80%;
+  margin-left: -15px;
+}
+
+.membershipL h1 {
+  /* ⭐ 검토하기 ⭐ */
+}
+.membershipL span {
+  font-size: 32px;
+}
+.membershipL button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  padding: 20px 10px;
+
+  width: 50%;
+
+  border: none;
+  background: var(--earth);
+  color: white;
+
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
+
+  cursor: pointer;
+}
+
+.membershipL button span {
+  font-size: 18px;
+}
+
+.membershipL button:hover {
+  transform: scale(1.1);
+}
+
+.membershipR {
+  width: auto;
+  height: auto;
+  box-shadow: 1px 1px 24px 4px rgba(0, 0, 0, 0.4);
+  /* ⭐ box-shadow 넣는 법 확인하기 ⭐ */
+}
+
+.membershipR img {
+  display: block;
+  /* img 태그가 기분적으로 인라인 요소이기 때문에 여백이 생기지 않으려면 block으로 바꿔줘야함 */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ==========
+   footer
+========== */
+footer {
+  width: 100%;
+  min-height: 300px;
+}
+.footer_wrap {
+  position: relative;
+  display: grid;
+
+  /* 2개의 열 */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  /* 2개의 행 */
+  grid-template-rows: auto 1fr;
+
+  width: 100%;
+  min-height: 300px;
+}
+
+.footerUp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
+  grid-column: 1 / -1;
+
+  padding: 2rem;
+
+  color: var(--white);
+
+  z-index: 10;
+}
+
+.footerL {
+  padding: 1rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: var(--white);
+}
+.footer_logo {
+  font-family: "Gasoek One", sans-serif;
+
+  font-size: 6rem;
+  font-weight: 500;
+
+  /* 그라데이션 적용 */
+  background: var(--moonTomars);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* 글자 색상 투명하게 */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  width: fit-content;
+
+  text-decoration: none;
+}
+.footer_info {
+  display: flex;
+  gap: 3rem;
+}
+.footer_sns {
+  display: flex;
+  gap: 1rem;
+}
+.footerR {
+  position: relative;
+
+  color: var(--white);
+}
+
+.footer_copy {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 4rem;
+
+  text-align: right;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_bg {
+  position: absolute;
+  right: -29rem;
+  bottom: -10rem;
+}

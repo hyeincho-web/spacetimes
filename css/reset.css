@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap");
+
+:root {
+  --1-main: #3c0a01;
+  --2-text: #474045;
+  --3-accent-1: #e8a04d;
+  --4-accent-2: #b09ad0;
+  --5-sub: #bedbfd;
+
+  --header: linear-gradient(180deg, var(--5-sub) 0%, var(--black) 100%);
+
+  --earth: linear-gradient(180deg, #a7b2cf 0%, #2f6eb3 100%);
+  --shark: linear-gradient(180deg, #8b3235 0%, #a7b2cf 100%);
+  --moonTomars: linear-gradient(180deg, #8d8996 0%, #a2310e 100%);
+
+  --white: #fff;
+  --ctaBlack: #160200;
+  --bgBlack: #111111;
+  --black: #000;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; /* 추가 */
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.6;
+  /* ⭐ 여기 수정해줌 1 ➡ 1.6 ⭐ */
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 추가 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
